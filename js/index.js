@@ -67,3 +67,14 @@ const imgDestination = document.querySelector('.content-destination > img');
 window.addEventListener('resize', (e)=>{
     imgDestination.style.borderRadius = '100px';
 });
+
+
+//9.SCROLL
+
+const body = document.querySelector('body');
+window.addEventListener('scroll', (e) => {
+    body.style.backgroundColor = '#e3c0b2';
+});
+
+
+//10. DRAG AND DROP 
