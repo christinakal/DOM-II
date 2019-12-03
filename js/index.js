@@ -1,6 +1,6 @@
 // Your code goes here
 
-// MOUSEOVER - MOUSEOUT
+// 1.MOUSEOVER - MOUSEOUT
 const menuElement = document.querySelector('h1')
 
 menuElement.addEventListener('mouseover', (e)=> {
@@ -12,7 +12,7 @@ menuElement.addEventListener('mouseout', (e)=> {
 });
 
 
-// WHEEL
+// 2.WHEEL
 let img = document.querySelector('header > img');
 
 let rotation = 0;
@@ -21,7 +21,7 @@ img.addEventListener('wheel', (e) => {
 });
 
 
-//DOUBLE CLICK
+//3.DOUBLE CLICK
 let imgAdv = document.querySelector('.img-content > img:first-child');
 
 imgAdv.addEventListener('dblclick', (e) => {
@@ -29,7 +29,7 @@ imgAdv.addEventListener('dblclick', (e) => {
 });
 
 
-// MOUSE ENTER
+// 4.MOUSE ENTER
 
 const text = document.querySelector('.text-content:nth-child(2)');
 
@@ -38,8 +38,32 @@ text.addEventListener('mouseenter', (e)=>{
 });
 
 
-//CLICK
+//5.CLICK
 
 menuElement.addEventListener('click', (e)=>{
     location.reload();
+});
+
+
+//6.RESIZE
+
+imgAdv.addEventListener('resize', (event) => {
+    event.target.style.transform = 'scale(5)';    
+});
+
+
+//7.MOUSEDOWN
+const imgFun = document.querySelector('.img-fluid');
+
+imgFun.addEventListener('mousedown', (e)=>{
+    e.target.style.visibility = 'hidden';
+});
+
+
+
+//8.RESIZE
+const imgDestination = document.querySelector('.content-destination > img');
+
+window.addEventListener('resize', (e)=>{
+    imgDestination.style.borderRadius = '100px';
 });
