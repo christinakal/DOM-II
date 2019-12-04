@@ -29,7 +29,7 @@ imgAdv.addEventListener('dblclick', (e) => {
 });
 
 
-// 4.MOUSE ENTER
+// 4.MOUSE ENTER && 5.MOUSE LEAVE
 
 const text = document.querySelector('.text-content:nth-child(2)');
 
@@ -37,22 +37,26 @@ text.addEventListener('mouseenter', (e)=>{
     e.target.style.color = 'red';
 });
 
+text.addEventListener('mouseleave', (e)=>{
+    e.target.style.color = 'black';
+});
 
-//5.CLICK
+
+//6.CLICK
 
 menuElement.addEventListener('click', (e)=>{
     location.reload();
 });
 
 
-//6.RESIZE
+//7.RESIZE
 
 imgAdv.addEventListener('resize', (event) => {
     event.target.style.transform = 'scale(5)';    
 });
 
 
-//7.MOUSEDOWN
+//8.MOUSEDOWN
 const imgFun = document.querySelector('.img-fluid');
 
 imgFun.addEventListener('mousedown', (e)=>{
@@ -61,7 +65,7 @@ imgFun.addEventListener('mousedown', (e)=>{
 
 
 
-//8.RESIZE
+//9.RESIZE
 const imgDestination = document.querySelector('.content-destination > img');
 
 window.addEventListener('resize', (e)=>{
@@ -69,7 +73,7 @@ window.addEventListener('resize', (e)=>{
 });
 
 
-//9.SCROLL
+//10.SCROLL
 
 const body = document.querySelector('body');
 window.addEventListener('scroll', (e) => {
@@ -77,4 +81,19 @@ window.addEventListener('scroll', (e) => {
 });
 
 
-//10. DRAG AND DROP 
+
+// GSAP
+
+const btn = document.querySelectorAll('.btn');
+
+btn.forEach( item => {
+    item.addEventListener('mouseenter', (e)=>{
+        //TweenMax.to(btn, .2, {scaleX:1, scaleY:1});
+        TweenMax.to(item, 1.5,{scale:1.5, yoyo:true});
+    });
+
+    item.addEventListener('mouseleave', (e)=>{
+        //TweenMax.to(btn, .2, {scaleX:1, scaleY:1});
+        TweenMax.to(item, 1.5,{scale:1, yoyo:true});
+    });
+})
